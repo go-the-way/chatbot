@@ -1,0 +1,12 @@
+[Unit]
+Description=chatbot daemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/chatbot
+ExecStart=/var/chatbot/chatbot
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
